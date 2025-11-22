@@ -25,10 +25,10 @@ void Cn1(){
            printf("Đây là số nguyên tố\n");
             }
              else{
-            for (int i = 1; i < num; i++)
+            for (int i = 1; i <= num; i++)
                 {
                     int num1 = (float) num;
-                sd = num1%i;
+                    sd = num1%i;
                     if (sd == 0)
                     {
                        nt++; 
@@ -52,17 +52,126 @@ void Cn1(){
         printf("Đây không phải số chính phương\n");
     }
     
+
+    
              
  
 }
 
 void Cn2(){}
 
-void Cn3(){}
+void Cn3(){
+    int gia = 50000,giovao,giora,tongbill = 0,giosudung;
 
-void Cn4(){}
 
-void Cn5(){}
+    printf("Giờ vào: \n");
+    scanf("%d",&giovao);
+    printf("Giờ ra: \n");
+    scanf("%d",&giora);
+    giosudung = giora - giovao;
+
+if(12<=giovao && giovao<=23){
+    
+
+    
+    
+    if (giosudung>3)
+    {
+        tongbill = 3*gia + (giosudung-3)*gia*0.7 ;
+    }else{
+        tongbill = giosudung*gia;
+    }
+    
+
+
+
+    if (14<=giovao && giovao<=17)
+    {
+        tongbill = tongbill*0.9;
+    }
+
+    printf("Tổng bill là : %d\n",tongbill);
+    }
+    else{printf("Ngoài giờ hoạt động\n");}
+}
+
+void Cn4(){
+
+int sudung,tien;
+
+printf("Mời nhập số tiền điện đã sử dụng: \n");
+scanf("%d",&sudung);
+
+
+
+
+if (sudung>=401)
+{
+    printf("Bậc6");
+    tien = sudung * 2927;
+} else{
+    if (sudung >= 301 && sudung <=400)
+    {
+        printf("Bậc 5");
+        tien = sudung * 2834;
+    } else
+    {
+        if (sudung >= 201 && sudung <=300)
+        {
+            printf("Bậc 4");
+            tien = sudung * 2536;
+        } else
+        {
+            if (sudung >= 101 && sudung <=200)
+            {
+                printf("Bậc 3");
+                tien = sudung *2014;
+            }else {
+                if (sudung >= 50 && sudung <=100)
+                {
+                    printf("Bậc 2");
+                    tien = sudung * 1734;
+                } else{
+                    if (sudung <50){
+                    printf("Bậc 1");
+                    tien = sudung *1678;
+                    }
+                }
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    
+}
+
+printf("\n Số tiền cần phải trả là : %d \n",tien);
+
+
+}
+
+void Cn5(){
+    int vay;
+    printf("Nhập số tiền muốn vay: \n");
+    scanf("%d",&vay);
+
+    int thang = vay /12 ;
+    
+
+    printf("Kỳ hạn --- Lãi phải trả ----- Gốc phải trả ----- Số tiền phải trả ----- Số tiền còn lại\n");
+    for (int i = 1; i <=12; i++)
+    {
+        int lai = vay *0.05;
+        int tienphaitra = thang + lai;
+        vay = vay - thang;
+    printf("  %d         %d              %d              %d               %d   \n",i,lai,thang,tienphaitra,vay);
+    }
+    
+    
+}
 
 void Cn6(){}
 
@@ -116,10 +225,17 @@ int main(){
     case 0:
     printf("Tạm biệt");
     goto ketthuc;
+
+
    default:
    printf("Vui lòng nhập lại \n");
     break;
+
+    
    }
+   printf("Press Enter to continue...");
+   getchar();
+    getchar();
 } while (choice !=0);
     
                     
