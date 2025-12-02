@@ -3,6 +3,18 @@
 #include <math.h>
 
 
+int UCLN(int a, int b){
+    if (a == 0) return b;
+    if (b == 0) return a;
+
+    while (b != 0) {
+        int r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+}
+
 void Cn1(){
         float num,sd,cb2, nt = 0;
 
@@ -58,7 +70,55 @@ void Cn1(){
  
 }
 
-void Cn2(){}
+void Cn2(){
+
+    int x,y;
+    printf("Mời nhập số x: ");
+    scanf("%d",&x);
+    printf("Mời nhập số y: ");
+    scanf("%d",&y);
+
+
+
+    printf("Ước chung lớn nhất của %d và %d: %d\n",x,y,UCLN(x,y));
+    printf("Bội chung nhỏ nhất của %d và %d: %d\n",x,y,x*y/UCLN(x,y));
+
+
+    // printf(" %d",a[0]);
+
+    // printf("\n");
+    //  for (int i = 1; i <= y; i++)
+    // {
+    //     if(x%i == 0){
+    //         b[o1]= i;
+    //         o1++;
+    //         printf(" %d",b[o1]);
+    //     }
+    // }
+
+    // for (int i = 0; i <= o; i++)
+    //     {
+    //     for (int j = 0; j <= o1; j++)
+    //     {
+    //         if (a[i] == b[j])
+    //         {
+    //             c[c1]= a[i];
+    //             c1++;
+    //         }
+            
+    //     }
+        
+    //     }
+
+    //     for (int i = 0; i <=c1; i++)
+    //     {
+    //         printf(" %d",c[i]);
+    //     }
+        
+    
+
+    
+}
 
 void Cn3(){
     int gia = 50000,giovao,giora,tongbill = 0,giosudung;
